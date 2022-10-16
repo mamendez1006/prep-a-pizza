@@ -18,12 +18,6 @@ function App() {
     setSelected(updatedToppings);
   };
 
-  const selectedItems = selected.length
-    ? selected.reduce((total, item) => {
-      return total + "' " + item;
-    })
-    : "";
-
   var isSelected = (item) =>
     selected.includes(item) ? "selected-item" : "not-selected-item";
 
@@ -69,9 +63,6 @@ function App() {
         </div>
       </div>
       <button className="button">Add to Cart</button>
-      <div className="toppings-box">
-        {'Items checked are: '}{selectedItems}
-      </div>
     </div>
   );
 }
