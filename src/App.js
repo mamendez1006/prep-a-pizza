@@ -23,47 +23,49 @@ function App() {
 
   return (
     <div className="app">
-      <div className="pizza-overview">
-        <img src="/images/pizza-background.png" alt="Pizza background"></img>
-        {selected.map((item, index) => (
-          <img key={index} src={"/images/"+ item + ".png"} alt={item}/>
-        ))}
-      </div>
-      <div className="header">Choose Your Toppings</div>
-      <div className="toppings-box">
-        <div className="title">▼ Meat Toppings</div>
-        <div className="list-container">
-          {meat_toppings.map((item, index) => (
-            <div key={index}>
-              <input value={item} type="checkbox" onChange={handleSelect} />
-              <span className={isSelected(item)}>{item}</span>
-            </div>
+      <div className="main-content">
+        <div className="pizza-overview">
+          <img src="/images/pizza-background.png" alt="Pizza background"></img>
+          {selected.map((item, index) => (
+            <img key={index} src={"/images/" + item + ".png"} alt={item} />
           ))}
         </div>
-      </div>
-      <div className="toppings-box">
-        <div className="title">▼ Veggie Toppings</div>
-        <div className="list-container">
-          {veggie_toppings.map((item, index) => (
-            <div key={index}>
-              <input value={item} type="checkbox" onChange={handleSelect} />
-              <span className={isSelected(item)}>{item}</span>
-            </div>
-          ))}
+        <div className="header">Choose Your Toppings</div>
+        <div className="toppings-box">
+          <div className="title">▼ Meat Toppings</div>
+          <div className="list-container">
+            {meat_toppings.map((item, index) => (
+              <div key={index}>
+                <input value={item} type="checkbox" onChange={handleSelect} />
+                <span className={isSelected(item)}>{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="toppings-box">
-        <div className="title">▼ Other Toppings</div>
-        <div className="list-container">
-          {other_toppings.map((item, index) => (
-            <div key={index}>
-              <input value={item} type="checkbox" onChange={handleSelect} />
-              <span className={isSelected(item)}>{item}</span>
-            </div>
-          ))}
+        <div className="toppings-box">
+          <div className="title">▼ Veggie Toppings</div>
+          <div className="list-container">
+            {veggie_toppings.map((item, index) => (
+              <div key={index}>
+                <input value={item} type="checkbox" onChange={handleSelect} />
+                <span className={isSelected(item)}>{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
+        <div className="toppings-box">
+          <div className="title">▼ Other Toppings</div>
+          <div className="list-container">
+            {other_toppings.map((item, index) => (
+              <div key={index}>
+                <input value={item} type="checkbox" onChange={handleSelect} />
+                <span className={isSelected(item)}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <button className="button">Add to Cart</button>
       </div>
-      <button className="button">Add to Cart</button>
     </div>
   );
 }
