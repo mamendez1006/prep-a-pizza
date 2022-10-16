@@ -29,8 +29,9 @@ function App() {
           <img key={index} src={"/images/"+ item + ".png"} alt={item}/>
         ))}
       </div>
+      <div className="header">Choose Your Toppings</div>
       <div className="toppings-box">
-        <div className="title">▼ Meat Toppings:</div>
+        <div className="title">▼ Meat Toppings</div>
         <div className="list-container">
           {meat_toppings.map((item, index) => (
             <div key={index}>
@@ -41,7 +42,7 @@ function App() {
         </div>
       </div>
       <div className="toppings-box">
-        <div className="title">▼ Veggie Toppings:</div>
+        <div className="title">▼ Veggie Toppings</div>
         <div className="list-container">
           {veggie_toppings.map((item, index) => (
             <div key={index}>
@@ -52,7 +53,7 @@ function App() {
         </div>
       </div>
       <div className="toppings-box">
-        <div className="title">▼ Other Toppings:</div>
+        <div className="title">▼ Other Toppings</div>
         <div className="list-container">
           {other_toppings.map((item, index) => (
             <div key={index}>

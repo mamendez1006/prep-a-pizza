@@ -47,7 +47,15 @@
 .title {
   background: #505050;
   color: whitesmoke;
+  text-align: left;
+}
+
+.header {
+  background: #606060;
+  color: whitesmoke;
   text-align: center;
+  font-size: 20px;
+  height: 30px;
 }
 
 .list-container {
