@@ -29,7 +29,12 @@ function App() {
 
   return (
     <div className="app">
-      <div className="meat_toppings">
+      <div className="pizza-overview">
+        <img src="/images/pizza-background.png" alt="Pizza background"></img>
+        <img src="/images/pepperoni.png" alt="Pizza background"></img>
+        <img src="/images/hot-sauce.png" alt="Pizza background"></img>
+      </div>
+      <div className="toppings-box">
         <div className="title">▼ Meat Toppings:</div>
         <div className="list-container">
           {meat_toppings.map((item, index) => (
@@ -40,7 +45,7 @@ function App() {
           ))}
         </div>
       </div>
-      <div className="veggie_toppings">
+      <div className="toppings-box">
         <div className="title">▼ Veggie Toppings:</div>
         <div className="list-container">
           {veggie_toppings.map((item, index) => (
@@ -51,7 +56,7 @@ function App() {
           ))}
         </div>
       </div>
-      <div className="other_toppings">
+      <div className="toppings-box">
         <div className="title">▼ Other Toppings:</div>
         <div className="list-container">
           {other_toppings.map((item, index) => (
@@ -63,7 +68,7 @@ function App() {
         </div>
       </div>
       <button className="button">Add to Cart</button>
-      <div>
+      <div className="toppings-box">
         {'Items checked are: '}{selectedItems}
       </div>
     </div>
