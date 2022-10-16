@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [selected, setSelected] = useState([]);
-  const meat_toppings = ["Pepperoni", "Sausage", "Chicken", "Sausage"];
+  const meat_toppings = ["Pepperoni", "Bacon", "Chicken", "Sausage"];
   const veggie_toppings = ["Peppers", "Onions", "Pickle", "Spinach"];
   const other_toppings = ["Extra cheese", "Extra oil", "Extra sauce", "Hot sauce", "Mayonnaise", "Mustard"];
 
