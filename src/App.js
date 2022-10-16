@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="app">
       <div className="meat_toppings">
-        <div className="title">Meat Toppings:</div>
+        <div className="title">▼ Meat Toppings:</div>
         <div className="list-container">
           {meat_toppings.map((item, index) => (
             <div key={index}>
@@ -41,7 +41,7 @@ function App() {
         </div>
       </div>
       <div className="veggie_toppings">
-        <div className="title">Veggie Toppings:</div>
+        <div className="title">▼ Veggie Toppings:</div>
         <div className="list-container">
           {veggie_toppings.map((item, index) => (
             <div key={index}>
@@ -52,7 +52,7 @@ function App() {
         </div>
       </div>
       <div className="other_toppings">
-        <div className="title">Other Toppings:</div>
+        <div className="title">▼ Other Toppings:</div>
         <div className="list-container">
           {other_toppings.map((item, index) => (
             <div key={index}>
