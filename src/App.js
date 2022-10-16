@@ -62,6 +62,7 @@ function App() {
           ))}
         </div>
       </div>
+      <button className="button">Add to Cart</button>
       <div>
         {'Items checked are: '}{selectedItems}
       </div>
