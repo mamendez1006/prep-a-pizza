@@ -32,7 +32,7 @@ function App() {
       <div className="pizza-overview">
         <img src="/images/pizza-background.png" alt="Pizza background"></img>
         {selected.map((item, index) => (
-          <img key={index} src={"/images/"+ item + ".png"} />
+          <img key={index} src={"/images/"+ item + ".png"} alt={item}/>
         ))}
       </div>
       <div className="toppings-box">
