@@ -1,73 +1,19 @@
-import React, { useState } from "react";
+import React from 'react';
 import './App.css';
+import { NavLink, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [selected, setSelected] = useState([]);
-  const meat_toppings = ["Pepperoni", "Bacon", "Chicken", "Sausage"];
-  const veggie_toppings = ["Peppers", "Onions", "Pickle", "Spinach"];
-  const other_toppings = ["Extra cheese", "Extra oil", "Extra sauce", "Hot sauce", "Mayonnaise", "Mustard"];
+import Home from './pages/Home';
+import Simple_Checkout from './pages/Simple_Checkout';
+import Simple_Pizzamaker from './pages/Simple_Pizzamaker';
 
-
-  const handleSelect = (event) => {
-    var updatedToppings = [...selected];
-    if (event.target.checked) {
-      updatedToppings = [...selected, event.target.value];
-    } else {
-      updatedToppings.splice(selected.indexOf(event.target.value), 1);
-    }
-    setSelected(updatedToppings);
-  };
-
-  var isSelected = (item) =>
-    selected.includes(item) ? "selected-item" : "not-selected-item";
-
-  return (
-    <div className="app">
-      <div className="main-content">
-        <div className="pizza-overview">
-          <img src="/images/pizza-background.png" alt="Pizza background"></img>
-          {selected.map((item, index) => (
-            <img key={index} src={"/images/" + item + ".png"} alt={item} />
-          ))}
-        </div>
-        <div className="header">Choose Your Toppings</div>
-        <div className="toppings-box">
-          <div className="title">▼ Meat Toppings</div>
-          <div className="list-container">
-            {meat_toppings.map((item, index) => (
-              <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="toppings-box">
-          <div className="title">▼ Veggie Toppings</div>
-          <div className="list-container">
-            {veggie_toppings.map((item, index) => (
-              <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="toppings-box">
-          <div className="title">▼ Other Toppings</div>
-          <div className="list-container">
-            {other_toppings.map((item, index) => (
-              <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <button className="button">Add to Cart</button>
-      </div>
-    </div>
-  );
-}
+const App = () => (
+  <div className='app'>
+    <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="simple_checkout" element={ <Simple_Checkout/> } />
+        <Route path="simple_pizzamaker" element={ <Simple_Pizzamaker/> } />
+    </Routes> 
+  </div>
+);
 
 export default App;

@@ -82,6 +82,7 @@
   border-radius: 13px;
   float: right;
   flex: 0 1 40px;
+  width: 100%;
 }
 
 .button:hover {
