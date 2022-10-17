@@ -65,7 +65,7 @@ function Simple_Pizzamaker() {
             ))}
           </div>
         </div>
-        <Link to="/simple_checkout">
+        <Link to="/simple_checkout" state= {{toppings: selected}} >
           <button className="button">Add to Cart</button>
         </Link>
       </div>

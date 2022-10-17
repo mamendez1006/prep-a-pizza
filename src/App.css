@@ -98,10 +98,25 @@
   position: relative;
 }
 
-.pizza-overview img {
+.pizza-overview>img {
   width: 100%;
   margin-left: -50%;
   margin-right: -50%;
+}
+.checkout-overview {
+  flex: 1 1 auto;
+  display: flex;
+  background-color: white;
+  align-items: left;
+  justify-content: left;
+  position: relative;
+  margin-left: 100px;
+}
+.checkout-overview>img {
+  width: 50%;
+  margin-left: -25%;
+  margin-right: -25%;
+  
 }
 
 .toppings-box {
@@ -111,4 +126,16 @@
 body {
   height: 100%;
   margin: 0;
+}
+
+hr {
+  width: 100%;
+}
+
+p {
+  width: 100%;
+}
+
+p > span {
+  float:right;
 }
