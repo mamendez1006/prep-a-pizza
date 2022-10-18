@@ -37,8 +37,8 @@ function Simple_Pizzamaker() {
           <div className="list-container">
             {meat_toppings.map((item, index) => (
               <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
+                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                <label for={item + "-id"} className={isSelected(item)} >{item}</label>
               </div>
             ))}
           </div>
@@ -48,8 +48,8 @@ function Simple_Pizzamaker() {
           <div className="list-container">
             {veggie_toppings.map((item, index) => (
               <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
+                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                <label for={item + "-id"} className={isSelected(item)}>{item}</label>
               </div>
             ))}
           </div>
@@ -59,8 +59,8 @@ function Simple_Pizzamaker() {
           <div className="list-container">
             {other_toppings.map((item, index) => (
               <div key={index}>
-                <input value={item} type="checkbox" onChange={handleSelect} />
-                <span className={isSelected(item)}>{item}</span>
+                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                <label for={item + "-id"} className={isSelected(item)}>{item}</label>
               </div>
             ))}
           </div>
