@@ -7,6 +7,10 @@ const Home = () => (
       <Link to="simple_pizzamaker">
         <button className="button">Design 1</button>
       </Link>
+
+      <Link to="SlideMaker">
+        <button className='button'>Design 2</button>
+      </Link>
     </div>
   </div>
 );

@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+.pane{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-width: 100px;
+  height: 100%;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
