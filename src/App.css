@@ -59,6 +59,8 @@
   display: flex;
   flex-flow: column;
   height: 100%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
 
 .title {
