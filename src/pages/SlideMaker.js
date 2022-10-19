@@ -45,7 +45,7 @@ function SlideMaker() {
   });
 
   function calcTotal(){
-  var total = 0;
+  var total = 8.98;
     for(let i = 0; i < slides.length; i++){
       if(slides[i].isActive){
         total+=slides[i].price;
