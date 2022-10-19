@@ -32,7 +32,7 @@ function SlideMaker() {
 
   const containerStyles = {
     width: '500px',
-    height: '280px',
+    height: '200px',
     margin: '0 auto'
   };
 
