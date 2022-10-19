@@ -40,14 +40,18 @@ const ImageSlider = ({slides}) => {
     };
 
     const goToPrevious = () => {
+        slides[currentIndex].isActive = false;
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length-1 : currentIndex - 1;
+        slides[newIndex].isActive = true;
         setCurrentIndex(newIndex);
     };
 
     const goToNext = () => {
+        slides[currentIndex].isActive = false;
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        slides[newIndex].isActive = true;
         setCurrentIndex(newIndex);
     }
 
