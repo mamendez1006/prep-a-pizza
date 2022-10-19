@@ -3,13 +3,13 @@ import { useLocation } from "react-router-dom";
 import '../App.css';
 import NavBar from "../components/NavBar";
 
-function Simple_Checkout() {
+function SimpleCheckout() {
   const location = useLocation();
   console.log(location, " useLocation Hook");
   const toppings = location.state?.toppings;
   return (
     <div className="app">
-      <NavBar backVisible={true} backDest={"/simple_pizzamaker"}/>
+      <NavBar backVisible={true} backDest={"/simplepizzamaker"}/>
       <div className="main-content">
         <h2>Checkout</h2>
         <p>1 item</p>
@@ -37,4 +37,4 @@ function Simple_Checkout() {
   );
 }
 
-export default Simple_Checkout;
+export default SimpleCheckout;

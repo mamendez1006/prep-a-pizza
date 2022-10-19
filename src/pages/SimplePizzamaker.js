@@ -4,7 +4,7 @@ import '../App.css';
 
 import NavBar from "../components/NavBar";
 
-function Simple_Pizzamaker() {
+function SimplePizzamaker() {
   const [selected, setSelected] = useState([]);
   const meat_toppings = ["Pepperoni", "Bacon", "Chicken", "Sausage"];
   const veggie_toppings = ["Peppers", "Onions", "Pickle", "Spinach"];
@@ -68,7 +68,7 @@ function Simple_Pizzamaker() {
             ))}
           </div>
         </div>
-        <Link to="/simple_checkout" state={{ toppings: selected }} >
+        <Link to="/simplecheckout" state={{ toppings: selected }} >
           <button className="button">Add to Cart</button>
         </Link>
       </div>
@@ -76,4 +76,4 @@ function Simple_Pizzamaker() {
   );
 }
 
-export default Simple_Pizzamaker;
+export default SimplePizzamaker;
