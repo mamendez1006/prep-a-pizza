@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
 
+import NavBar from "../components/NavBar";
+
 function Simple_Pizzamaker() {
   const [selected, setSelected] = useState([]);
   const meat_toppings = ["Pepperoni", "Bacon", "Chicken", "Sausage"];
@@ -24,6 +26,7 @@ function Simple_Pizzamaker() {
 
   return (
     <div className="app">
+      <NavBar backVisible={false}/>
       <div className="main-content">
         <div className="pizza-overview">
           <img src="/images/pizza-background.png" alt="Pizza background"></img>
@@ -38,7 +41,7 @@ function Simple_Pizzamaker() {
             {meat_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label for={item + "-id"} className={isSelected(item)} >{item}</label>
+                <label htmlFor={item + "-id"} className={isSelected(item)} >{item}</label>
               </div>
             ))}
           </div>
@@ -49,7 +52,7 @@ function Simple_Pizzamaker() {
             {veggie_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label for={item + "-id"} className={isSelected(item)}>{item}</label>
+                <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
               </div>
             ))}
           </div>
@@ -60,12 +63,12 @@ function Simple_Pizzamaker() {
             {other_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label for={item + "-id"} className={isSelected(item)}>{item}</label>
+                <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
               </div>
             ))}
           </div>
         </div>
-        <Link to="/simple_checkout" state= {{toppings: selected}} >
+        <Link to="/simple_checkout" state={{ toppings: selected }} >
           <button className="button">Add to Cart</button>
         </Link>
       </div>

@@ -86,6 +86,27 @@
   padding-right: 10px;
 }
 
+.navbar {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  position: relative;
+}
+.navbar img {
+  max-height: 48px;
+  margin: auto;
+  display: block;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+
 .button {
   background-color: #505050;
   color: whitesmoke;

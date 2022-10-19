@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
 import '../App.css';
+import NavBar from "../components/NavBar";
 
 function Simple_Checkout() {
   const location = useLocation();
@@ -9,12 +9,8 @@ function Simple_Checkout() {
   const toppings = location.state?.toppings;
   return (
     <div className="app">
+      <NavBar backVisible={true} backDest={"/simple_pizzamaker"}/>
       <div className="main-content">
-        <header>
-          <Link to="/simple_pizzamaker">
-            <button className="">Back</button>
-          </Link>
-        </header>
         <h2>Checkout</h2>
         <p>1 item</p>
         <hr />

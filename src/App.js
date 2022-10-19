@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Simple_Checkout from './pages/Simple_Checkout';
