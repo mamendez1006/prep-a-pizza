@@ -24,7 +24,7 @@ const ImageSlider = ({slides}) => {
         left: '32px',
         fontSize: '45px',
         color: '#000',
-        zIndex: 1,
+        zIndex: 0,
         cursor: 'pointer'
     };
 
@@ -35,7 +35,7 @@ const ImageSlider = ({slides}) => {
         right: '32px',
         fontSize: '45px',
         color: '#000',
-        zIndex: 1,
+        zIndex: 0,
         cursor: 'pointer'
     };
 

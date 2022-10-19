@@ -1,4 +1,5 @@
 import React, {  useState } from "react";
+import { Link } from "react-router-dom";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import '../App.css'
@@ -30,7 +31,6 @@ function SlideMaker() {
 
   const [state, setState] = useState({
     isPaneOpen: false,
-    isPaneOpenLeft: false,
   });
 
   return (
@@ -65,7 +65,9 @@ function SlideMaker() {
               <input type="text" name="ccv" />
             </label>
             <br></br>
-            <input type="submit" value="Submit" />
+            <Link to = "/">
+              <input type="submit" value="Submit" />
+            </Link>
           </div>
         </SlidingPane>
 
@@ -82,7 +84,7 @@ function SlideMaker() {
 
       <div>
         <button onClick={() => setState({ isPaneOpen: true })}>
-          Click me to open pane!
+          Checkout!
         </button>
       </div>
 
