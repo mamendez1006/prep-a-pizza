@@ -80,10 +80,6 @@
 
 .list-container {
   background: #D9D9D9;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 .navbar {
@@ -99,13 +95,19 @@
   display: block;
 }
 
+.small-margin {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .back-button {
   background: none;
   border: none;
   cursor: pointer;
   position: absolute;
 }
-
 
 .button {
   background-color: #505050;

@@ -37,7 +37,7 @@ function SimplePizzamaker() {
         <div className="header">Choose Your Toppings</div>
         <div className="toppings-box">
           <div className="title">Meat Toppings</div>
-          <div className="list-container">
+          <div className="list-container small-margin">
             {meat_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
@@ -48,7 +48,7 @@ function SimplePizzamaker() {
         </div>
         <div className="toppings-box">
           <div className="title">Veggie Toppings</div>
-          <div className="list-container">
+          <div className="list-container small-margin">
             {veggie_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
@@ -59,7 +59,7 @@ function SimplePizzamaker() {
         </div>
         <div className="toppings-box">
           <div className="title">Other Toppings</div>
-          <div className="list-container">
+          <div className="list-container small-margin">
             {other_toppings.map((item, index) => (
               <div key={index}>
                 <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />

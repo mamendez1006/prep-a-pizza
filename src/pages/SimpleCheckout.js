@@ -9,10 +9,12 @@ function SimpleCheckout() {
   const toppings = location.state?.toppings;
   return (
     <div className="app">
-      <NavBar backVisible={true} backDest={"/simplepizzamaker"}/>
+      <NavBar backVisible={true} backDest={"/simplepizzamaker"} />
       <div className="main-content">
-        <h2>Checkout</h2>
-        <p>1 item</p>
+        <div className='small-margin'>
+          <h2>Checkout</h2>
+          <p>1 item</p>
+        </div>
         <hr />
         <div>
           <div className="checkout-overview">
@@ -23,7 +25,7 @@ function SimpleCheckout() {
           </div>
         </div>
         <hr />
-        <div>
+        <div className='small-margin'>
           <p>Subtotal <span>$9.99</span></p>
           <p>Tax <span>$0.59</span></p>
           <br />
