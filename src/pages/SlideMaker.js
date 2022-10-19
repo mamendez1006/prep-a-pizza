@@ -8,15 +8,25 @@ import ImageSlider from "../components/ImageSlider";
 function SlideMaker() {
 
   const slides = [
-    { url: '/images/sliderPics/bacon.jpg', title: 'bacon' },
-    { url: '/images/sliderPics/sausage.png', title: 'sausage' },
-    { url: '/images/sliderPics/pepperoni.jpg', title: 'pepperoni' }
+    { url: '/images/sliderPics/bacon.jpg', title: 'bacon', price: 1 },
+    { url: '/images/sliderPics/sausage.png', title: 'sausage', price: 1 },
+    { url: '/images/sliderPics/pepperoni.jpg', title: 'pepperoni', price: 1 }
   ];
 
   const slides1 = [
-    { url: '/images/sliderPics/mushroom.jfif', title: 'mushroom' },
-    { url: '/images/sliderPics/onion.jpg', title: 'onion' },
-    { url: '/images/sliderPics/peppers.jpg', title: 'peppers' }
+    { url: '/images/sliderPics/mushroom.jfif', title: 'mushroom', price: 1 },
+    { url: '/images/sliderPics/onion.jpg', title: 'onion', price: 1 },
+    { url: '/images/sliderPics/peppers.jpg', title: 'peppers', price: 1 }
+  ];
+
+  const slides2 = [
+    {url: '/images/sliderPics/whitesauce.jpeg', title: 'whitesauce', price: 1},
+    {url: '/images/sliderPics/pizza-sauce.png', title: 'pizza-sauce', price: 1}
+  ];
+
+  const slides3 = [
+    {url: '/images/sliderPics/regularCrust.png', title: 'regularCrust', price: 1},
+    {url: '/images/sliderPics/cauliflowercrust.webp', title: 'cauliflower', price: 1}
   ];
 
   const containerStyles = {
@@ -81,13 +91,20 @@ function SlideMaker() {
       <div style={containerStyles}>
         <ImageSlider slides={slides1} />
       </div>
+      <h1 style={headingStyles}>Sauce</h1>
+      <div style={containerStyles}>
+        <ImageSlider slides={slides2} />
+      </div>
+      <h1 style={headingStyles}>Crust</h1>
+      <div style={containerStyles}>
+        <ImageSlider slides={slides3} />
+      </div>
 
       <div>
-        <button onClick={() => setState({ isPaneOpen: true })}>
+        <button className="button" onClick={() => setState({ isPaneOpen: true })}>
           Checkout!
         </button>
       </div>
-
     </div>
 
 
