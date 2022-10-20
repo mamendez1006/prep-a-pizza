@@ -1,0 +1,136 @@
+.main-content-checkout-page {
+    display: flex;
+    flex-flow: column;
+    padding: 5%;
+    padding-top: 20%;
+    background-color: #333333;
+    align-items: center;
+  }
+
+.form {
+    background: linear-gradient(180deg, rgba(242,242,242,1) 30%, rgba(255,242,221,1) 100%);
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 320px;
+  }
+  
+  .title-checkout {
+    color: #333333;
+    font-family: sofia-pro,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .subtitle {
+    color: #333333;
+    font-family: sofia-pro,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input-container input{
+    background-color: #a5a5a5;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #f2f2f2;
+    font-family: sofia-pro,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .cut {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .placeholder {
+    color: #f2f2f2;
+    font-family: sofia-pro,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #222222;
+  }
+  
+  .submit {
+    background-color: #333333;
+    border-radius: 50px;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sofia-pro,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f2f2f2;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    outline: 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #222222;
+  }

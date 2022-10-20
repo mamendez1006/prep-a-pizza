@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
 
-import NavBar from "../components/NavBar";
-
 function SimplePizzamaker() {
   const [selected, setSelected] = useState([]);
   const meat_toppings = ["Pepperoni", "Bacon", "Chicken", "Sausage"];
@@ -26,7 +24,6 @@ function SimplePizzamaker() {
 
   return (
     <div className="app">
-      <NavBar backVisible={false}/>
       <div className="main-content">
         <div className="pizzaContainer">
         <div className="header">Your Pizza</div>

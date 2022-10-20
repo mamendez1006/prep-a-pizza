@@ -5,6 +5,7 @@ import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import '../App.css'
 import ImageSlider from "../components/ImageSlider";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 function SlideMaker() {
 
@@ -29,16 +30,6 @@ function SlideMaker() {
     {url: '/images/sliderPics/regularCrust.png', title: 'regularCrust', price: 1, isActive: true},
     {url: '/images/sliderPics/cauliflowercrust.webp', title: 'cauliflower', price: 2, isActive: false}
   ];
-
-  const containerStyles = {
-    width: '500px',
-    height: '200px',
-    margin: '0 auto'
-  };
-
-  const headingStyles = {
-    textAlign: 'center'
-  };
 
   const [state, setState] = useState({
     isPaneOpen: false,
@@ -73,9 +64,9 @@ function SlideMaker() {
 
   return (
     <div>
-      
+      <div className="main-content">
       <SlidingPane
-          className="checkout"
+          className="checkoutSlider"
           overlayClassName="pane"
           isOpen={state.isPaneOpen}
           title={calcTotal.call()}
@@ -85,55 +76,71 @@ function SlideMaker() {
             setState({ isPaneOpen: false });
           }}
       >
-          <div className="form-box">
-            <label>Name:
-              <input type="text" name="name" />
-            </label>
-            <br></br>
-            <label>Card Number:
-              <input type="text" name="card number" />
-            </label>
-            <br></br>
-            <label>Exp. date:
-              <input type="text" name="exp date" />
-            </label>
-            <br></br>
-            <label>CCV:
-              <input type="text" name="ccv" />
-            </label>
-            <br></br>
-            <Link to = "/">
-              <input type="submit" value="Submit" />
-            </Link>
-          </div>
+          <div class="form">
+                <div class="title-checkout">Checkout</div>
+                <div class="subtitle">Let's get this pizza ordered!</div>
+                <div class="input-container ic1">
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Name</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="email" class="input" type="email" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="email" class="placeholder">Email</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="card" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="card" class="placeholder">Card #</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="exp" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="exp" class="placeholder">Exp</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="ccv" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="ccv" class="placeholder">CCV</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="address" class="input" type="text" placeholder=" " />
+                    <div class="cut cut-short"></div>
+                    <label for="address" class="placeholder">Address</label>
+                </div>
+                <Link to="/">
+                    <div className="button-placement">
+                        <button type="text" class="submit">Submit</button>
+                    </div>
+                </Link>
+            </div>
         </SlidingPane>
+      
+      <div className="selection-container">
+        <div className="design-two-title">Your Pizza</div>
+        <div className="design-two-paragraph">Please Select From Below</div>
+        <div className="design-two-subtitle">Meats</div>
+        <div className="slider-image-container">
+          <ImageSlider slides={slides} />
+        </div>
+        <div className="design-two-subtitle">Vegetables</div>
+        <div className="slider-image-container">
+          <ImageSlider slides={slides1} />
+        </div>
+        <div className="design-two-subtitle">Sauce</div>
+        <div className="slider-image-container">
+          <ImageSlider slides={slides2} />
+        </div>
+        <div className="design-two-subtitle">Crust</div>
+        <div className="slider-image-container">
+          <ImageSlider slides={slides3} />
+        </div>
 
-
-      <NavBar 
-        backVisible = {"false"}
-        backDest = {"/"}
-      />
-      <h1 style={headingStyles}>Meats</h1>
-      <div style={containerStyles}>
-        <ImageSlider slides={slides} />
+        <div className="button-placement">
+              <button className="button-35" onClick={() => setState({ isPaneOpen: true })}>Checkout</button>
+        </div>
       </div>
-      <h1 style={headingStyles}>Veggies</h1>
-      <div style={containerStyles}>
-        <ImageSlider slides={slides1} />
-      </div>
-      <h1 style={headingStyles}>Sauce</h1>
-      <div style={containerStyles}>
-        <ImageSlider slides={slides2} />
-      </div>
-      <h1 style={headingStyles}>Crust</h1>
-      <div style={containerStyles}>
-        <ImageSlider slides={slides3} />
-      </div>
-
-      <div>
-        <button className="button" onClick={() => setState({ isPaneOpen: true })}>
-          Checkout!
-        </button>
       </div>
     </div>
 

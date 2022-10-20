@@ -5,11 +5,15 @@ const Home = () => (
   <div className="app">
     <div className="main-content">
       <Link to="simplepizzamaker">
-        <button className="button">Design 1</button>
+          <div className="button-placement">
+            <button className="button-35">Design 1</button>
+          </div>
       </Link>
 
       <Link to="SlideMaker">
-        <button className='button'>Design 2</button>
+          <div className="button-placement">
+            <button className="button-35">Design 2</button>
+          </div>
       </Link>
     </div>
   </div>
