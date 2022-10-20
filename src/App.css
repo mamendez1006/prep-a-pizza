@@ -373,6 +373,19 @@
   width: 50%;
 }
 
+.img-container-checkout{
+  align-items: center;
+  align-content: center;
+  padding-top: 5%;
+}
+
+.img-container-checkout img{
+  max-width:300px;
+  max-height:200px;
+  margin-left: 5%;
+  border-radius: 20px;
+}
+
 .slide-pane {
   border-radius: 20px;
 }

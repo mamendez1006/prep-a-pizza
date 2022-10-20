@@ -84,11 +84,6 @@ function SlideMaker() {
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Name</label>
                 </div>
-                <div class="input-container ic2">
-                    <input id="email" class="input" type="email" placeholder=" " />
-                    <div class="cut cut-short"></div>
-                    <label for="email" class="placeholder">Email</label>
-                </div>
                 <div class="input-container ic1">
                     <input id="card" class="input" type="number" placeholder=" " />
                     <div class="cut"></div>
@@ -104,10 +99,8 @@ function SlideMaker() {
                     <div class="cut"></div>
                     <label for="ccv" class="placeholder">CCV</label>
                 </div>
-                <div class="input-container ic2">
-                    <input id="address" class="input" type="text" placeholder=" " />
-                    <div class="cut cut-short"></div>
-                    <label for="address" class="placeholder">Address</label>
+                <div class="img-container-checkout">
+                    <img src="/images/map.png"></img>
                 </div>
                 <Link to="/">
                     <div className="button-placement">
