@@ -10,7 +10,7 @@ function SimpleCheckout() {
   return (
     <div className="app">
       <NavBar backVisible={true} backDest={"/simplepizzamaker"} />
-      <div className="main-content">
+      <div className="main-content-checkout">
         <div className='small-margin'>
           <h2>Checkout</h2>
           <p>1 item</p>
@@ -18,10 +18,14 @@ function SimpleCheckout() {
         <hr />
         <div>
           <div className="checkout-overview">
-            <img className="checkout-pizza" src="/images/pizza-background.png" alt="Pizza background"></img>
-            {toppings.map((item, index) => (
-              <img className="checkout-pizza" key={index} src={"/images/" + item + ".png"} alt={item} />
-            ))}
+            <div className="imgContainer">
+              <img src="/images/pizza-background.png" alt="Pizza background"></img>
+              <div className='images-toppings-checkout'>
+                {toppings.map((item, index) => (
+                  <img key={index} src={"/images/" + item + ".png"} alt={item} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <hr />
@@ -31,9 +35,9 @@ function SimpleCheckout() {
           <br />
           <b><p>Total <span>$10.58</span></p></b>
         </div>
-        <button className="button">Buy Now</button>
-
-
+        <div className="button-placement">
+            <button className="button-35">Buy Now</button>
+          </div>
       </div>
     </div>
   );
