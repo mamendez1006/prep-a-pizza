@@ -6,6 +6,9 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import '../App.css'
 import ImageSlider from "../components/ImageSlider";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Map from "../components/Map";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import ReactDOM from 'react-dom';
 
 function SlideMaker() {
 
@@ -61,6 +64,15 @@ function SlideMaker() {
     return "Total: $" + total;
   }
 
+  const location = {
+    address: '1600 Amphitheatre Parkway, Mountain View, california.',
+    lat: 37.42216,
+    lng: -122.08427,
+  }
+
+  const render = (status: Status) => {
+    return <h1>{status}</h1>;
+  };
 
   return (
     <div>
@@ -99,8 +111,10 @@ function SlideMaker() {
                     <div class="cut"></div>
                     <label for="ccv" class="placeholder">CCV</label>
                 </div>
-                <div class="img-container-checkout">
-                    <img src="/images/map.png"></img>
+                <div className="map-box">
+                  <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
+                    <Map location={location} zoomLevel={17} />
+                  </Wrapper>
                 </div>
                 <Link to="/">
                     <div className="button-placement">
