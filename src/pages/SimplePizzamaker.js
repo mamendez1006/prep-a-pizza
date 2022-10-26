@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SlidingPane from "react-sliding-pane";
+import Map from "../components/map/Map";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import '../App.css';
 
 function SimplePizzamaker() {
@@ -19,12 +22,73 @@ function SimplePizzamaker() {
     setSelected(updatedToppings);
   };
 
+  const [state, setState] = useState({
+    isPaneOpen: false,
+  });
+
+  const location = {
+    address: 'Newell Dr, Gainesville, FL 32603',
+    lat: 29.64927,
+    lng: -82.34376,
+  } 
+
+  const render = (status: Status) => {
+    return <h1>{status}</h1>;
+  };
+
   var isSelected = (item) =>
     selected.includes(item) ? "selected-item" : "not-selected-item";
 
   return (
     <div className="app">
       <div className="main-content">
+      <SlidingPane
+          className="checkoutSlider"
+          overlayClassName="pane"
+          isOpen={state.isPaneOpen}
+          title={"Total: $123"}
+          from="bottom"
+          width="100%"
+          onRequestClose={() => {
+            setState({ isPaneOpen: false });
+          }}
+      >
+          <div class="form">
+                <div class="title-checkout">Checkout</div>
+                <div class="subtitle">Let's get this pizza ordered!</div>
+                <div class="input-container ic1">
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Name</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="card" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="card" class="placeholder">Card #</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="exp" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="exp" class="placeholder">Exp</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="ccv" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="ccv" class="placeholder">CCV</label>
+                </div>
+                <div className="map-box">
+                  <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
+                    <Map location={location} zoomLevel={17} />
+                  </Wrapper>
+                </div>
+                <Link to="/">
+                    <div className="button-placement">
+                        <button type="text" class="submit">Submit</button>
+                    </div>
+                </Link>
+            </div>
+        </SlidingPane>
+
         <div className="pizzaContainer">
           <div className="fixed-pizza">
             <div className="header">Your Pizza</div>
@@ -73,11 +137,9 @@ function SimplePizzamaker() {
           </div>
           </div>
         </div>
-        <Link to="/simplecheckout" state={{ toppings: selected }} >
-          <div className="button-placement">
-            <button className="button-35">Add to Cart</button>
-          </div>
-        </Link>
+        <div className="button-placement">
+              <button className="button-35" onClick={() => setState({ isPaneOpen: true })}>Checkout</button>
+        </div>
       </div>
     </div>
   );
