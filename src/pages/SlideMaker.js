@@ -6,7 +6,7 @@ import "react-sliding-pane/dist/react-sliding-pane.css";
 import '../App.css'
 import ImageSlider from "../components/ImageSlider";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Map from "../components/Map";
+import Map from "../components/map/Map";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import ReactDOM from 'react-dom';
 
@@ -65,10 +65,10 @@ function SlideMaker() {
   }
 
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
-  }
+    address: 'Newell Dr, Gainesville, FL 32603',
+    lat: 29.64927,
+    lng: -82.34376,
+  } 
 
   const render = (status: Status) => {
     return <h1>{status}</h1>;
