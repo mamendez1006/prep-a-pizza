@@ -113,7 +113,7 @@ function SlideMaker() {
                 </div>
                 <div className="map-box">
                   <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
-                    <Map location={location} zoomLevel={17} />
+                    <Map location={location} zoomLevel={15} />
                   </Wrapper>
                 </div>
                 <Link to="/">
