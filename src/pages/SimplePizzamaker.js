@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SlidingPane from "react-sliding-pane";
-import Map from "../components/map/Map";
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import '../App.css';
 
 function SimplePizzamaker() {
@@ -26,15 +24,6 @@ function SimplePizzamaker() {
     isPaneOpen: false,
   });
 
-  const location = {
-    address: 'Newell Dr, Gainesville, FL 32603',
-    lat: 29.64927,
-    lng: -82.34376,
-  } 
-
-  const render = (status: Status) => {
-    return <h1>{status}</h1>;
-  };
 
   var isSelected = (item) =>
     selected.includes(item) ? "selected-item" : "not-selected-item";

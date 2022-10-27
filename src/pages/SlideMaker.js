@@ -1,10 +1,8 @@
 import React, {  useState } from "react";
 import { Link } from "react-router-dom";
-import NavBar from "../components/NavBar";
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
 import '../App.css'
-import ImageSlider from "../components/ImageSlider";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -22,28 +20,6 @@ import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import ReactDOM from 'react-dom';
 
 function SlideMaker() {
-  var slides = [
-    { url: '/images/sliderPics/bacon.jpg', title: 'bacon', price: 1, isActive: true },
-    { url: '/images/sliderPics/sausage.png', title: 'sausage', price: 2, isActive: false },
-    { url: '/images/sliderPics/pepperoni.jpg', title: 'pepperoni', price: 3, isActive: false }
-  ];
-
-  var slides1 = [
-    { url: '/images/sliderPics/mushroom.jfif', title: 'mushroom', price: 1, isActive: true },
-    { url: '/images/sliderPics/onion.jpg', title: 'onion', price: 2, isActive: false },
-    { url: '/images/sliderPics/peppers.jpg', title: 'peppers', price: 3, isActive: false }
-  ];
-
-  var slides2 = [
-    {url: '/images/sliderPics/whitesauce.jpeg', title: 'whitesauce', price: 1, isActive: true},
-    {url: '/images/sliderPics/pizza-sauce.png', title: 'pizza-sauce', price: 2, isActive: false}
-  ];
-
-  var slides3 = [
-    {url: '/images/sliderPics/regularCrust.png', title: 'regularCrust', price: 1, isActive: true},
-    {url: '/images/sliderPics/cauliflowercrust.webp', title: 'cauliflower', price: 2, isActive: false}
-  ];
-
   const [state, setState] = useState({
     isPaneOpen: false,
   });
@@ -80,6 +56,7 @@ function SlideMaker() {
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Name</label>
                 </div>
+                <div class="subtitle">Card Information</div>
                 <div class="input-container ic1">
                     <input id="card" class="input" type="number" placeholder=" " />
                     <div class="cut"></div>
