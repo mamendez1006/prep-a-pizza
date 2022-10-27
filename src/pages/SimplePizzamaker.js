@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SlidingPane from "react-sliding-pane";
 import '../App.css';
+import Popup from "reactjs-popup";
+import 'reactjs-popup/dist/index.css';
 
 function SimplePizzamaker() {
   const [selected, setSelected] = useState([]);
@@ -82,11 +84,17 @@ function SimplePizzamaker() {
                     <div class="cut"></div>
                     <label for="state" class="placeholder">State</label>
                 </div>
-                <Link to="/">
-                    <div className="button-placement-homepage">
-                        <button type="text" class="submit">Submit</button>
-                    </div>
-                </Link>
+                <Popup trigger={<button class="submit"> Submit</button>} modal>
+                  {close =>(
+                    <div className="modal">
+                      <div className="h2">Order Confirmed</div>
+                      <Link to="/">
+                        <div className="button-placement">
+                            <button type="text" class="submit">Return to Home</button>
+                        </div>
+                      </Link>
+                    </div>)}
+                </Popup>
             </div>
         </SlidingPane>
 
