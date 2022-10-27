@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import SlidingPane from "react-sliding-pane";
 import '../App.css';
 
 function SimplePizzamaker() {
@@ -19,12 +20,76 @@ function SimplePizzamaker() {
     setSelected(updatedToppings);
   };
 
+  const [state, setState] = useState({
+    isPaneOpen: false,
+  });
+
+
   var isSelected = (item) =>
     selected.includes(item) ? "selected-item" : "not-selected-item";
 
   return (
     <div className="app">
       <div className="main-content">
+      <SlidingPane
+          className="checkoutSlider"
+          overlayClassName="pane"
+          isOpen={state.isPaneOpen}
+          title={"Total: $10.99"}
+          from="bottom"
+          width="100%"
+          onRequestClose={() => {
+            setState({ isPaneOpen: false });
+          }}
+      >
+          <div class="form">
+                <div class="title-checkout">Checkout</div>
+                <div class="subtitle">Let's get this pizza ordered!</div>
+                <div class="input-container ic1">
+                    <input id="name" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="name" class="placeholder">Name</label>
+                </div>
+                <div class="subtitle">Card Information</div>
+                <div class="input-container ic1">
+                    <input id="card" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="card" class="placeholder">Card #</label>
+                </div>
+                <div class="input-container ic1">
+                    <input id="exp" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="exp" class="placeholder">Exp</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="ccv" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="ccv" class="placeholder">CCV</label>
+                </div>
+                <div class="subtitle">Delivery Address</div>
+                <div class="input-container ic2">
+                    <input id="addy" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="addy" class="placeholder">Address</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="zip" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="zip" class="placeholder">Zip Code</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="state" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="state" class="placeholder">State</label>
+                </div>
+                <Link to="/">
+                    <div className="button-placement-homepage">
+                        <button type="text" class="submit">Submit</button>
+                    </div>
+                </Link>
+            </div>
+        </SlidingPane>
+
         <div className="pizzaContainer">
           <div className="fixed-pizza">
             <div className="header">Your Pizza</div>
@@ -73,11 +138,9 @@ function SimplePizzamaker() {
           </div>
           </div>
         </div>
-        <Link to="/simplecheckout" state={{ toppings: selected }} >
-          <div className="button-placement">
-            <button className="button-35">Add to Cart</button>
-          </div>
-        </Link>
+        <div className="button-placement">
+              <button className="button-35" onClick={() => setState({ isPaneOpen: true })}>Checkout</button>
+        </div>
       </div>
     </div>
   );
