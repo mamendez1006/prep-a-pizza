@@ -46,7 +46,7 @@ function SimplePizzamaker() {
           className="checkoutSlider"
           overlayClassName="pane"
           isOpen={state.isPaneOpen}
-          title={"Total: $123"}
+          title={"Total: $10.99"}
           from="bottom"
           width="100%"
           onRequestClose={() => {
@@ -61,6 +61,7 @@ function SimplePizzamaker() {
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Name</label>
                 </div>
+                <div class="subtitle">Card Information</div>
                 <div class="input-container ic1">
                     <input id="card" class="input" type="number" placeholder=" " />
                     <div class="cut"></div>
@@ -76,13 +77,24 @@ function SimplePizzamaker() {
                     <div class="cut"></div>
                     <label for="ccv" class="placeholder">CCV</label>
                 </div>
-                <div className="map-box">
-                  <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
-                    <Map location={location} zoomLevel={17} />
-                  </Wrapper>
+                <div class="subtitle">Delivery Address</div>
+                <div class="input-container ic2">
+                    <input id="addy" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="addy" class="placeholder">Address</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="zip" class="input" type="number" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="zip" class="placeholder">Zip Code</label>
+                </div>
+                <div class="input-container ic2">
+                    <input id="state" class="input" type="text" placeholder=" " />
+                    <div class="cut"></div>
+                    <label for="state" class="placeholder">State</label>
                 </div>
                 <Link to="/">
-                    <div className="button-placement">
+                    <div className="button-placement-homepage">
                         <button type="text" class="submit">Submit</button>
                     </div>
                 </Link>
