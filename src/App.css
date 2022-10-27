@@ -50,8 +50,8 @@
 }
 
 .app {
-  max-height: 844px;
-  max-width: 390px;
+  max-height: 100vh;
+  max-width: 100vw;
   min-height: 100vh;
   background-color: #333333;
   margin: 0 auto;
@@ -117,6 +117,9 @@
   font-size: 15px;
   font-style: normal;
   border-radius: 10px;
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .design-two-subtitle {
@@ -359,8 +362,7 @@
   filter: drop-shadow(0px 2px 3px #333333);
   position: fixed;
   z-index: 5;
-  min-height: 50vh;
-  max-width: 44vh;
+  width: 75vw;
   padding-left: 7%;
   padding-right: 7%;
 }
@@ -430,9 +432,11 @@
 .slide-pane {
   border-radius: 20px;
   z-index: 15;
+  align-items: center;
 }
 .slide-pane__header{
   border-radius: 20px;
+  width: 100%;
 }
 .slide-pane__overlay {
   z-index: 15;
@@ -589,3 +593,13 @@ p > span {
   overflow: hidden;
 }
 
+.slider-text{
+  color: #f2f2f2;
+  text-align: center;
+  font-family: sofia-pro;
+  font-weight: 400;
+  font-size: 15px;
+  font-style: normal;
+  border-radius: 10px;
+  padding: 20%;
+}

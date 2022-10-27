@@ -55,23 +55,23 @@ function SlideMaker() {
                 <div class="title-checkout">Checkout</div>
                 <div class="subtitle">Let's get this pizza ordered!</div>
                 <div class="input-container ic1">
-                    <input id="name" class="input" type="text" placeholder=" " />
+                    <input id="name" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Name</label>
                 </div>
                 <div class="subtitle">Card Information</div>
                 <div class="input-container ic1">
-                    <input id="card" class="input" type="number" placeholder=" " />
+                    <input id="card" class="input" type="number" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="card" class="placeholder">Card #</label>
                 </div>
                 <div class="input-container ic1">
-                    <input id="exp" class="input" type="text" placeholder=" " />
+                    <input id="exp" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="exp" class="placeholder">Exp</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="ccv" class="input" type="number" placeholder=" " />
+                    <input id="ccv" class="input" type="number" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="ccv" class="placeholder">CCV</label>
                 </div>
@@ -97,7 +97,7 @@ function SlideMaker() {
 
       <div className="selection-container">
         <div className="design-two-title">Your Pizza</div>
-        <div className="design-two-paragraph">Please Select From Below</div>
+        <div className="design-two-paragraph">Select One Of Each By Swiping To The Ingredient You Want</div>
         <div className="design-two-subtitle">Meats</div>
         <div className="swiper-container">
           <Swiper
@@ -120,14 +120,17 @@ function SlideMaker() {
           modules={[EffectCoverflow, Pagination]}
           initial-slide={"1"}
           class="mySwiper" >
+             <SwiperSlide>
+              <div className="slider-text">None</div>
+            </SwiperSlide>
           <SwiperSlide>
-            <model-viewer src="/images/design2/sausage.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+            <model-viewer src="/images/design2/sausage.glb" orientation="20deg 0 0" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
           <SwiperSlide>
-            <model-viewer src="/images/design2/bacon.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+            <model-viewer src="/images/design2/bacon.glb" orientation="50deg 0 0" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
           <SwiperSlide>
-            <model-viewer src="/images/design2/pepperoni.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+            <model-viewer src="/images/design2/pepperoni.glb" orientation="20deg 0 0" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
         </Swiper>
         </div>
@@ -153,6 +156,9 @@ function SlideMaker() {
           modules={[EffectCoverflow, Pagination]}
           initial-slide={"1"}
           class="mySwiper" >
+            <SwiperSlide>
+              <div className="slider-text">None</div>
+            </SwiperSlide>
           <SwiperSlide>
             <model-viewer src="/images/design2/pepper.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
@@ -160,7 +166,7 @@ function SlideMaker() {
             <model-viewer src="/images/design2/purple_onion.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
           <SwiperSlide>
-            <model-viewer src="/images/design2/spinach.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+            <model-viewer src="/images/design2/spinach.glb" orientation="50deg 0 0" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
         </Swiper>
         </div>
@@ -186,6 +192,9 @@ function SlideMaker() {
           modules={[EffectCoverflow, Pagination]}
           initial-slide={"1"}
           class="mySwiper" >
+            <SwiperSlide>
+              <div className="slider-text">None</div>
+            </SwiperSlide>
           <SwiperSlide>
             <model-viewer src="/images/design2/olive_oil.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
@@ -221,6 +230,60 @@ function SlideMaker() {
           class="mySwiper" >
           <SwiperSlide>
             <model-viewer src="/images/design2/pizza.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+          </SwiperSlide>
+        </Swiper>
+        </div>
+        <div className="design-two-subtitle">Sauce</div>
+        <div className="swiper-container">
+          <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"1"}
+          coverflowEffect={{
+          rotate: 5,
+          stretch: 40,
+          depth: 10,
+          modifier: 1,
+          slideShadows: true,
+          scale: .7,
+          }}
+          pagination={{
+              dynamicBullets: true,
+              clickable: true,
+          }}
+          modules={[EffectCoverflow, Pagination]}
+          initial-slide={"1"}
+          class="mySwiper" >
+          <SwiperSlide>
+            <model-viewer src="/images/design2/sauce.glb" orientation="10deg 0 0" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
+          </SwiperSlide>
+        </Swiper>
+        </div>
+        <div className="design-two-subtitle">Cheese</div>
+        <div className="swiper-container">
+          <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"1"}
+          coverflowEffect={{
+          rotate: 5,
+          stretch: 40,
+          depth: 10,
+          modifier: 1,
+          slideShadows: true,
+          scale: .7,
+          }}
+          pagination={{
+              dynamicBullets: true,
+              clickable: true,
+          }}
+          modules={[EffectCoverflow, Pagination]}
+          initial-slide={"1"}
+          class="mySwiper" >
+          <SwiperSlide>
+          <model-viewer src="/images/design2/cheddar_cheese.glb" ar environment-image="images/design2/moon_1k.hdr" disable-zoom shadow-intensity="1" auto-rotate alt="Spinach"></model-viewer>
           </SwiperSlide>
         </Swiper>
         </div>

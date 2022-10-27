@@ -48,39 +48,39 @@ function SimplePizzamaker() {
                 <div class="title-checkout">Checkout</div>
                 <div class="subtitle">Let's get this pizza ordered!</div>
                 <div class="input-container ic1">
-                    <input id="name" class="input" type="text" placeholder=" " />
+                    <input id="name" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="name" class="placeholder">Name</label>
                 </div>
                 <div class="subtitle">Card Information</div>
                 <div class="input-container ic1">
-                    <input id="card" class="input" type="number" placeholder=" " />
+                    <input id="card" class="input" type="number" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="card" class="placeholder">Card #</label>
                 </div>
                 <div class="input-container ic1">
-                    <input id="exp" class="input" type="text" placeholder=" " />
+                    <input id="exp" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="exp" class="placeholder">Exp</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="ccv" class="input" type="number" placeholder=" " />
+                    <input id="ccv" class="input" type="number" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="ccv" class="placeholder">CCV</label>
                 </div>
                 <div class="subtitle">Delivery Address</div>
                 <div class="input-container ic2">
-                    <input id="addy" class="input" type="text" placeholder=" " />
+                    <input id="addy" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="addy" class="placeholder">Address</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="zip" class="input" type="number" placeholder=" " />
+                    <input id="zip" class="input" type="number" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="zip" class="placeholder">Zip Code</label>
                 </div>
                 <div class="input-container ic2">
-                    <input id="state" class="input" type="text" placeholder=" " />
+                    <input id="state" class="input" type="text" placeholder=" " required/>
                     <div class="cut"></div>
                     <label for="state" class="placeholder">State</label>
                 </div>

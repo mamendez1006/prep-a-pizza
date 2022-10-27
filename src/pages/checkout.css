@@ -125,11 +125,11 @@
     color: #f2f2f2;
     cursor: pointer;
     font-size: 18px;
-    height: 50px;
     margin-top: 38px;
     outline: 0;
     text-align: center;
     width: 100%;
+    padding: 5%;
   }
   
   .submit:active {
