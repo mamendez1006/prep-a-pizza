@@ -9,6 +9,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Map from "../components/map/Map";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import ReactDOM from 'react-dom';
+import LocationPin from '../components/map/LocationPin'
+import Popup from "reactjs-popup";
+import 'reactjs-popup/dist/index.css';
 
 function SlideMaker() {
 
@@ -115,12 +118,19 @@ function SlideMaker() {
                   <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
                     <Map location={location} zoomLevel={15} />
                   </Wrapper>
+                  <LocationPin/> 
                 </div>
-                <Link to="/">
-                    <div className="button-placement">
-                        <button type="text" class="submit">Submit</button>
-                    </div>
-                </Link>
+                <Popup trigger={<button class="submit"> Submit</button>} modal>
+                  {close =>(
+                    <div className="modal">
+                      <div className="h2">Order Confirmed</div>
+                      <Link to="/">
+                        <div className="button-placement">
+                            <button type="text" class="submit">Return to Home</button>
+                        </div>
+                      </Link>
+                    </div>)}
+                </Popup>
             </div>
         </SlidingPane>
       

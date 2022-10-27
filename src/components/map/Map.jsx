@@ -1,6 +1,5 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react'
-import LocationPin from './LocationPin.jsx'
 import './map.css'
 
 
@@ -16,7 +15,7 @@ const Map = ({ location, zoomLevel }) => (
                 yesIWantToUseGoogleMapApiInternals={true}
             >
             </GoogleMapReact>    
-            <LocationPin/>  
+             
         </div>
     </div>
 )
