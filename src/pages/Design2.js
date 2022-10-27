@@ -1,17 +1,23 @@
 import '../App.css';
-import { Link } from "react-router-dom";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
-const Home = () => (
+
+function Home() {
+
+  const navigate = useNavigate();
+  const navigateHome = () => {
+    // 👇️ navigate to /
+    navigate('/SlideMaker');
+  };
+  return(
   <div className="app">
     <div className="main-content-homepage">
       <div className='homepage-image'></div>
-      <Link to="SlideMaker">
-          <div className="button-placement-landing">
-            <button className="button-35">Customize & Order Pizza</button>
-          </div>
-      </Link>
+        <div className="button-placement-landing">
+          <button className="button-35" onClick={navigateHome}>Customize & Order Pizza</button>
+        </div>
     </div>
   </div>
 );
-
+  }
 export default Home;

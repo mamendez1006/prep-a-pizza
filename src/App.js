@@ -22,6 +22,7 @@ const App = () => (
         <Route path="simplecheckout/completion" element={ <CheckoutDesign1/> } />
         <Route path="/home1/simplepizzamaker" element={ <SimplePizzamaker/> } />
         <Route path='/home2/SlideMaker' element={<SlideMaker/>} />
+        <Route path='/SlideMaker' element={<SlideMaker/>} />
     </Routes> 
   </div>
 );
