@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SlidingPane from "react-sliding-pane";
 import '../App.css';
 import Popup from "reactjs-popup";
+import PaymentInputs from "../components/PaymentInputs";
 import 'reactjs-popup/dist/index.css';
 
 function SimplePizzamaker() {
@@ -33,7 +34,7 @@ function SimplePizzamaker() {
   return (
     <div className="app">
       <div className="main-content">
-      <SlidingPane
+        <SlidingPane
           className="checkoutSlider"
           overlayClassName="pane"
           isOpen={state.isPaneOpen}
@@ -43,59 +44,45 @@ function SimplePizzamaker() {
           onRequestClose={() => {
             setState({ isPaneOpen: false });
           }}
-      >
+        >
           <div class="form">
-                <div class="title-checkout">Checkout</div>
-                <div class="subtitle">Let's get this pizza ordered!</div>
-                <div class="input-container ic1">
-                    <input id="name" class="input" type="text" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="name" class="placeholder">Name</label>
-                </div>
-                <div class="subtitle">Card Information</div>
-                <div class="input-container ic1">
-                    <input id="card" class="input" type="number" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="card" class="placeholder">Card #</label>
-                </div>
-                <div class="input-container ic1">
-                    <input id="exp" class="input" type="text" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="exp" class="placeholder">Exp</label>
-                </div>
-                <div class="input-container ic2">
-                    <input id="ccv" class="input" type="number" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="ccv" class="placeholder">CCV</label>
-                </div>
-                <div class="subtitle">Delivery Address</div>
-                <div class="input-container ic2">
-                    <input id="addy" class="input" type="text" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="addy" class="placeholder">Address</label>
-                </div>
-                <div class="input-container ic2">
-                    <input id="zip" class="input" type="number" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="zip" class="placeholder">Zip Code</label>
-                </div>
-                <div class="input-container ic2">
-                    <input id="state" class="input" type="text" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="state" class="placeholder">State</label>
-                </div>
-                <Popup trigger={<button class="submit"> Submit</button>} modal>
-                  {close =>(
-                    <div className="modal">
-                      <div className="h2">Order Confirmed</div>
-                      <Link to="/">
-                        <div className="button-placement">
-                            <button type="text" class="submit">Return to Home</button>
-                        </div>
-                      </Link>
-                    </div>)}
-                </Popup>
+            <div class="title-checkout">Checkout</div>
+            <div class="subtitle">Let's get this pizza ordered!</div>
+            <div class="input-container ic1">
+              <input id="name" class="input" type="text" placeholder=" " required />
+              <div class="cut"></div>
+              <label for="name" class="placeholder">Name</label>
             </div>
+            <div class="subtitle">Card Information</div>
+            <PaymentInputs/>
+            <div class="subtitle">Delivery Address</div>
+            <div class="input-container ic2">
+              <input id="addy" class="input" type="text" placeholder=" " required />
+              <div class="cut"></div>
+              <label for="addy" class="placeholder">Address</label>
+            </div>
+            <div class="input-container ic2">
+              <input id="zip" class="input" type="number" placeholder=" " required />
+              <div class="cut"></div>
+              <label for="zip" class="placeholder">Zip Code</label>
+            </div>
+            <div class="input-container ic2">
+              <input id="state" class="input" type="text" placeholder=" " required />
+              <div class="cut"></div>
+              <label for="state" class="placeholder">State</label>
+            </div>
+            <Popup trigger={<button class="submit"> Submit</button>} modal>
+              {close => (
+                <div className="modal">
+                  <div className="h2">Order Confirmed</div>
+                  <Link to="/">
+                    <div className="button-placement">
+                      <button type="text" class="submit">Return to Home</button>
+                    </div>
+                  </Link>
+                </div>)}
+            </Popup>
+          </div>
         </SlidingPane>
 
         <div className="pizzaContainer">
@@ -111,43 +98,43 @@ function SimplePizzamaker() {
           <hr />
         </div>
         <div className="options">
-        <div className="header2">Choose Your Toppings</div>
-        <div className="toppings-box">
-          <div className="title">Meat Toppings</div>
-          <div className="list-container small-margin">
-            {meat_toppings.map((item, index) => (
-              <div className="checkbox-rect2" key={index}>
-                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label htmlFor={item + "-id"} className={isSelected(item)} >{item}</label>
-              </div>
-            ))}
+          <div className="header2">Choose Your Toppings</div>
+          <div className="toppings-box">
+            <div className="title">Meat Toppings</div>
+            <div className="list-container small-margin">
+              {meat_toppings.map((item, index) => (
+                <div className="checkbox-rect2" key={index}>
+                  <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                  <label htmlFor={item + "-id"} className={isSelected(item)} >{item}</label>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="toppings-box">
-          <div className="title">Veggie Toppings</div>
-          <div className="list-container small-margin">
-            {veggie_toppings.map((item, index) => (
-              <div className="checkbox-rect2" key={index}>
-                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
-              </div>
-            ))}
+          <div className="toppings-box">
+            <div className="title">Veggie Toppings</div>
+            <div className="list-container small-margin">
+              {veggie_toppings.map((item, index) => (
+                <div className="checkbox-rect2" key={index}>
+                  <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                  <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="toppings-box">
-          <div className="title">Other Toppings</div>
-          <div className="list-container small-margin">
-            {other_toppings.map((item, index) => (
-              <div className="checkbox-rect2" key={index}>
-                <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
-                <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
-              </div>
-            ))}
-          </div>
+          <div className="toppings-box">
+            <div className="title">Other Toppings</div>
+            <div className="list-container small-margin">
+              {other_toppings.map((item, index) => (
+                <div className="checkbox-rect2" key={index}>
+                  <input id={item + "-id"} value={item} type="checkbox" onChange={handleSelect} />
+                  <label htmlFor={item + "-id"} className={isSelected(item)}>{item}</label>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="button-placement">
-              <button className="button-35" onClick={() => setState({ isPaneOpen: true })}>Checkout</button>
+          <button className="button-35" onClick={() => setState({ isPaneOpen: true })}>Checkout</button>
         </div>
       </div>
     </div>
