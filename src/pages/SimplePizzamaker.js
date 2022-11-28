@@ -9,9 +9,9 @@ import 'reactjs-popup/dist/index.css';
 
 function SimplePizzamaker() {
   const [selected, setSelected] = useState([]);
-  const meat_toppings = ["Pepperoni", "Bacon", "Sausage"];
-  const veggie_toppings = ["Peppers", "Onions", "Spinach"];
-  const other_toppings = ["Extra cheese", "Olive Oil", "Hot sauce"];
+  const meat_toppings = ["Pepperoni", "Sausage", "Beef", "Chicken", "Bacon", "Ham", "Pork"];
+  const veggie_toppings = ["Peppers", "Onions", "Spinach", "Mushrooms", "Tomatoes", "Olives", "Pineapple"];
+  const other_toppings = ["Extra cheese", "Olive Oil", "Hot sauce", "Ranch", "Alfredo sauce"];
 
 
   const handleSelect = (event) => {
