@@ -71,7 +71,7 @@ function SimplePizzamaker() {
             <Popup trigger={<button class="submit"> Submit</button>} modal>
               {close => (
                 <div className="modal">
-                  <div className="h2">Order Confirmed</div>
+                  <div className="subtitle">Order Confirmed</div>
                   <Link to="/">
                     <div className="button-placement">
                       <button type="text" class="submit">Return to Home</button>
