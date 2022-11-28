@@ -4,6 +4,7 @@ import SlidingPane from "react-sliding-pane";
 import '../App.css';
 import Popup from "reactjs-popup";
 import PaymentInputs from "../components/PaymentInputs";
+import StateSelector from "../components/StateSelector";
 import 'reactjs-popup/dist/index.css';
 
 function SimplePizzamaker() {
@@ -66,11 +67,7 @@ function SimplePizzamaker() {
               <div class="cut"></div>
               <label for="zip" class="placeholder">Zip Code</label>
             </div>
-            <div class="input-container ic2">
-              <input id="state" class="input" type="text" placeholder=" " required />
-              <div class="cut"></div>
-              <label for="state" class="placeholder">State</label>
-            </div>
+            <StateSelector/>
             <Popup trigger={<button class="submit"> Submit</button>} modal>
               {close => (
                 <div className="modal">
