@@ -7,6 +7,7 @@ import '../App.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import LocationPin from '../components/map/LocationPin'
 import Popup from "reactjs-popup";
+import PaymentInputs from "../components/PaymentInputs";
 import 'reactjs-popup/dist/index.css';
 
 // Import Swiper styles
@@ -60,21 +61,7 @@ function SlideMaker() {
                     <label for="name" class="placeholder">Name</label>
                 </div>
                 <div class="subtitle">Card Information</div>
-                <div class="input-container ic1">
-                    <input id="card" class="input" type="number" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="card" class="placeholder">Card #</label>
-                </div>
-                <div class="input-container ic1">
-                    <input id="exp" class="input" type="text" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="exp" class="placeholder">Exp</label>
-                </div>
-                <div class="input-container ic2">
-                    <input id="ccv" class="input" type="number" placeholder=" " required/>
-                    <div class="cut"></div>
-                    <label for="ccv" class="placeholder">CCV</label>
-                </div>
+                <PaymentInputs/>
                 <div className="map-box">
                   <Wrapper apiKey={"AIzaSyCafiRu_wI0hkn94SQ3V1E8N_78ffmyD0k"} render={render}>
                     <Map location={location} zoomLevel={15} />
